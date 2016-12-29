@@ -45,6 +45,11 @@ To run:
 in this directory, and navigate to:
 
     http://localhost:5000
+    
+    
+## Resulting Landing page
+
+![Landing Page](https://github.com/vidhiJain/Interactive-Visualisation-of-Pulsar-Dataset/blob/master/fig.png "Landing Page")
 
 ## References:
 
