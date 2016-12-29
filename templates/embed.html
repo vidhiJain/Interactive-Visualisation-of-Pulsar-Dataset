@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+
+    <title>NANOGrav GSoC</title>
+
+    {{ js_resources|indent(4)|safe }}
+
+    {{ css_resources|indent(4)|safe }}
+
+    {{ plot_script|indent(4)|safe }}
+
+    <style type="text/css">
+    #shape_selector{
+        max-width: 100px;
+        margin-right: 10px;
+    }
+    #shape_color{
+        max-width:100px; /*max-width for responsiveness*/
+        float: center;
+        margin-right: 10px;
+    }
+    #bcolor{
+    max-width:100px;
+    float:center;
+    }
+    #toggle{
+    max-width:100px;
+    margin-right: 10px;
+    }
+    #lfield{
+    max-width:100px;
+    float:center;
+    }
+    </style>
+
+  </head>
+  <body>
+  <H4>NANOGrav</H4>
+
+    <p> Select your settings: </p>
+    <form name="NANOGrav" method='GET'>
+        Plotting Shape:
+        <select id="shape_selector" name="_shape">
+            <option value="circle">Circle</option>
+            <option value="asterisk">Asterisk</option>
+            <option value="circle_cross">Circle cross</option>
+            <option value="cross">Cross</option>
+            <option value="diamond">Diamond</option>
+            <option value="diamond_cross">Diamond cross</option>
+            <option value="triangle">Triangle</option>
+            <option value="inverted_triangle">Inverted triangle</option>
+            <option value="square">square</option>
+            <option value="square_cross">Square cross</option>
+            <option value="square_x">Square_x</option>
+            <option value="x">x</option>
+            <option selected="selected" value="{{ _shape }}"></option>
+        </select>
+        Plotting Shape Color:
+        <input id="shape_color" type="color" name="favcolor" value="{{ favcolor }}">
+        Plot Background Color:
+        <input id="bcolor" type="color" name="bcolor" value="{{ bcolor }}">
+        <br><br>
+        Select plotting shape size :
+        <input type="number" name="_size" min="1" max="30" value="{{ _size }}" >
+        <br><br>
+        Connect Plotted points with a line :
+        <label><input id= "toggle" name="toggle" type="radio" value="True">Yes</label>
+        <label><input id="toggle" name="toggle" type="radio" value="" {{ _status }}>No</label>
+        Line Color:
+        <input id="lfield" type="color" name="lcolor" value="{{ lcolor }}">
+        <br><br>
+        Source JSON URL :
+        <input type="url" name="_source" size="50" value="{{ _source }}" >
+        <br><br>
+
+        <br>
+        <button type="submit"  value="submit" >Submit</button>
+    </form>
+    {{ plot_div|indent(4)|safe }}
+    <hr>
+  </body>
+</html>

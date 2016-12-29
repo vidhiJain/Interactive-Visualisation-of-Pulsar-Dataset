@@ -1,0 +1,7 @@
+#!/home/ubuntu/Documents/nanograv-gsoc-master/venv/bin/python
+
+import sys
+
+from bokeh.command.bootstrap import main
+
+main(sys.argv)
